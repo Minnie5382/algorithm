@@ -22,21 +22,11 @@ def get_full_line_count():
 
     return line
 
-# 2차원 배열인 board에서 특정 값의 2차원 인덱스 반환
-def get_index_of(value):
-    global board
-
-    for x in range(len(board)):
-        for y in range(len(board[x])):
-            if board[x][y] == value:
-                return x, y
-
 board = [list(map(int, input().split())) for x in range(5)]
 origin_list = [list(map(int, input().split())) for x in range(5)]
 
 speak = [data for inner_list in origin_list for data in inner_list]
 after = [[0 for _ in range(5)] for x in range(5)]
-
 
 for idx, s in enumerate(speak):
 
@@ -48,5 +38,3 @@ for idx, s in enumerate(speak):
     if get_full_line_count() >= 3:
         print(idx+1)
         break
-
-
