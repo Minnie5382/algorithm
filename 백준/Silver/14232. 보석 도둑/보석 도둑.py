@@ -1,12 +1,13 @@
-k = int(input())
-j = []
+N = int(input())
 
-for i in range(2, int(k**0.5) + 1):
-    while k % i == 0:
-        j.append(i)
-        k //= i
+answer = []
+divisor = 2
+for divisor in range(2, int(N**0.5)+1):
+    while N % divisor ==0:
+        answer.append(divisor)
+        N //= divisor
+if N != 1: answer.append(N)     
 
-if k != 1: j.append(k)
-
-print(len(j))
-print(*j)
+# 정답 출력
+print(len(answer))
+print(*answer)
